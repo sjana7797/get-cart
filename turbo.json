@@ -11,12 +11,15 @@
     },
     "dev": {
       "cache": false,
-      "dependsOn": ["^db:generate"]
+      "dependsOn": ["^db:up", "^db:generate"]
     },
     "db:generate": {
       "cache": false
     },
     "db:push": {
+      "cache": false
+    },
+    "db:up": {
       "cache": false
     }
   }
