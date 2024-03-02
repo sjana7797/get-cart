@@ -15,6 +15,8 @@ import { productSchema } from "~/zod-schema/product";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { createProduct } from "~/api/api-clients";
+import { toast } from "@repo/ui/lib/sonner";
+import { useEffect } from "react";
 
 function ProductInput() {
   // form definition
@@ -27,11 +29,32 @@ function ProductInput() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-    await mutateAsync(values);
+    await createProductMutate(values);
   };
 
   // server interaction
-  const { mutateAsync } = useMutation({ mutationFn: createProduct });
+  const { mutateAsync: createProductMutate } = useMutation({
+    mutationFn: createProduct,
+    onSuccess() {
+      toast.success("Product created successfully", {
+        description: "Product has been created successfully.",
+        className: "bg-green-500",
+      });
+    },
+    onError(error, variables, context) {
+      toast.error("Failed to create product", {
+        description: error.message,
+        className: "bg-red-500",
+      });
+    },
+  });
+
+  // reset form after successful submission
+  useEffect(() => {
+    if (form.formState.isSubmitSuccessful) {
+      form.reset({ name: "", price: 0, description: "" });
+    }
+  }, [form, form.formState.isSubmitSuccessful, form.reset]);
 
   return (
     <Form {...form}>
