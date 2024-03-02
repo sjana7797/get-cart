@@ -2,10 +2,17 @@
 module.exports = {
   darkMode: ["class"],
   content: [
+    // Add the content for the web
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    // Add the dashboard to the content
+    "../dashboard/index.html",
+    "../dashboard/src/**/*.{js,ts,jsx,tsx}",
+
+    // add ui content
+    "../../packages/ui/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
