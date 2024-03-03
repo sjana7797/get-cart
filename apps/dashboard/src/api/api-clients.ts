@@ -2,13 +2,14 @@ import { Product } from "~/zod-schema/product";
 import { nestJsInstanceRoutes } from "./api-routes";
 import { nestJsInstance } from "./instances";
 import { AxiosError } from "axios";
-import { product, productImage } from "database";
+import { product } from "database";
+import { GetAnalyticResponse } from "./response-types";
 
 async function createProduct(product: Product) {
   try {
     const response = await nestJsInstance.post(
       nestJsInstanceRoutes.createProduct,
-      product
+      product,
     );
     return response.data;
   } catch (error) {
@@ -21,9 +22,9 @@ async function createProduct(product: Product) {
 
 async function getAllProducts() {
   try {
-    const response = await nestJsInstance.get<
-      (product & { productImages: productImage[] })[]
-    >(nestJsInstanceRoutes.getAllProducts);
+    const response = await nestJsInstance.get<product[]>(
+      nestJsInstanceRoutes.getAllProducts,
+    );
     return response.data;
   } catch (error) {
     console.error(error);
@@ -33,4 +34,18 @@ async function getAllProducts() {
   }
 }
 
-export { createProduct, getAllProducts };
+async function getSpecs() {
+  try {
+    const response = await nestJsInstance.get<GetAnalyticResponse>(
+      nestJsInstanceRoutes.getAnalytic,
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    if (error instanceof AxiosError)
+      throw new Error(error.response?.data.message);
+    else throw new Error(JSON.stringify(error));
+  }
+}
+
+export { createProduct, getAllProducts, getSpecs };

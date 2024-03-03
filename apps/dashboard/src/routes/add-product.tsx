@@ -1,8 +1,10 @@
 import { useEffect } from "react";
-import ProductsSpecs from "~/components/home/products-specs";
+import ProductInput from "~/components/add-product/product-input";
 import useTopLoadingBar from "~/hooks/useTopLoadingBar";
+import Main from "~/layout/main";
 
-function Home() {
+function AddProduct() {
+  // top loading bar state
   const { setProgressDispatch } = useTopLoadingBar();
 
   useEffect(() => {
@@ -10,10 +12,10 @@ function Home() {
   }, [setProgressDispatch]);
 
   return (
-    <>
-      <ProductsSpecs />
-    </>
+    <Main title="Add Product">
+      <ProductInput />
+    </Main>
   );
 }
 
-export default Home;
+export default AddProduct;

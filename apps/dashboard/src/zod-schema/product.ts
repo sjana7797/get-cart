@@ -5,6 +5,15 @@ const productSchema = z.object({
   description: z.string().optional(),
   price: z.number(),
   productImages: z.array(z.string()).optional(),
+  category: z.enum([
+    "mobile",
+    "laptop",
+    "tablet",
+    "headphone",
+    "earphone",
+    "smartwatch",
+    "camera",
+  ]),
 });
 
 export type Product = z.infer<typeof productSchema>;

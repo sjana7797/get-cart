@@ -3,12 +3,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@repo/ui";
 import { Product, productSchema } from "~/zod-schema/product";
 import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
-import { createProduct } from "~/api/api-clients";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { createProduct, getAllProducts } from "~/api/api-clients";
 import { toast } from "@repo/ui/lib/sonner";
 import { useEffect } from "react";
 import ProductInputField from "./product-input-field";
 import ProductImages from "./product-images";
+import ProductCategory from "./product-category";
 
 function ProductInput() {
   // form definition
@@ -25,6 +26,12 @@ function ProductInput() {
   };
 
   // server interaction
+  // get all products query
+  const { refetch: refetchProducts } = useQuery({
+    queryKey: ["products"],
+    queryFn: getAllProducts,
+  });
+  // create product mutation
   const { mutateAsync: createProductMutate } = useMutation({
     mutationFn: createProduct,
     onSuccess() {
@@ -32,6 +39,7 @@ function ProductInput() {
         description: "Product has been created successfully.",
         className: "bg-green-500",
       });
+      refetchProducts();
     },
     onError(error) {
       toast.error("Failed to create product", {
@@ -75,6 +83,12 @@ function ProductInput() {
           label="Product Description"
           placeholder="Product Description"
           name="description"
+        />
+        <ProductCategory
+          formDescription="This is product description."
+          formikForm={form}
+          label="Product Description"
+          name="category"
         />
         <ProductImages
           formDescription="This is product images."

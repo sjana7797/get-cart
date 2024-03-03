@@ -14,7 +14,13 @@ export default defineConfig({
       {
         find: "@ui",
         replacement: fileURLToPath(
-          new URL("../../packages/ui", import.meta.url)
+          new URL("../../packages/ui", import.meta.url),
+        ),
+      },
+      {
+        find: "@common",
+        replacement: fileURLToPath(
+          new URL("../../packages/common", import.meta.url),
         ),
       },
     ],

@@ -16,6 +16,14 @@ interface ProductImagesInputProps
   formikForm: UseFormReturn<{
     name: string;
     price: number;
+    category:
+      | "mobile"
+      | "laptop"
+      | "tablet"
+      | "headphone"
+      | "earphone"
+      | "smartwatch"
+      | "camera";
     description?: string | undefined;
     productImages?: string[] | undefined;
   }>;
@@ -55,10 +63,11 @@ function ProductImages({
                   field.onChange(
                     field.value?.length
                       ? [...field.value, productImage]
-                      : [productImage]
+                      : [productImage],
                   );
                   setProductImage("");
                 }}
+                disabled={!productImage}
               >
                 add
               </Button>

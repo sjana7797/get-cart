@@ -13,6 +13,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Category {
+  mobile
+  laptop
+  tablet
+  headphone
+  earphone
+  smartwatch
+  camera
+}
+
 model product {
   id            String   @id @default(auto()) @map("_id") @db.ObjectId
   name          String
@@ -20,6 +30,7 @@ model product {
   description   String?
   banner        banner[]
   productImages String[]
+  category      Category
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 }

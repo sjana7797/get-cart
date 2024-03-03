@@ -15,6 +15,14 @@ interface ProductInputProps extends InputHTMLAttributes<HTMLInputElement> {
   formikForm: UseFormReturn<{
     name: string;
     price: number;
+    category:
+      | "mobile"
+      | "laptop"
+      | "tablet"
+      | "headphone"
+      | "earphone"
+      | "smartwatch"
+      | "camera";
     description?: string | undefined;
     productImages?: string[] | undefined;
   }>;
