@@ -6,7 +6,8 @@
   "scripts": {
     "db:generate": "prisma generate",
     "db:push": "prisma db push --skip-generate",
-    "db:up": "docker compose up -d || docker-compose up -d"
+    "db:up": "docker compose up -d || docker-compose up -d",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2"

@@ -27,6 +27,7 @@
     },
     "db:up": {
       "cache": false
-    }
+    },
+    "db:studio": { "cache": false }
   }
 }

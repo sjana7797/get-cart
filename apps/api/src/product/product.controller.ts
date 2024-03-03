@@ -1,18 +1,21 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ProductService } from './product.service';
-import { ProductDto } from './dto/product.dto';
+import { Prisma } from '@prisma/client';
 
 @Controller('product')
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
-  @Get()
+  @Get('all')
   async getProducts() {
     return this.productService.products();
   }
 
   @Post('create')
-  async createProduct(@Body() productDto: ProductDto) {
-    return this.productService.createProduct(productDto);
+  async createProduct(
+    @Body()
+    product: Prisma.productCreateInput,
+  ) {
+    return this.productService.createProduct(product);
   }
 }

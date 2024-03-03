@@ -1,17 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { Prisma } from '@prisma/client';
+
 @Injectable()
-export class ProductService {
+export class UserService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async products() {
-    return this.prismaService.product.findMany({});
+  async findAll() {
+    return this.prismaService.user.findMany();
   }
 
-  async createProduct(product: Prisma.productCreateInput) {
-    return await this.prismaService.product.create({
-      data: product,
+  async register(user: Prisma.userCreateInput) {
+    return this.prismaService.user.create({
+      data: user,
     });
   }
 }

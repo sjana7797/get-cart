@@ -1,4 +1,5 @@
-import type * as trpcNext from "@trpc/server/adapters/next";
+import { CreateNextContextOptions } from "@trpc/server/adapters/next";
+import { prisma } from "~/server/db";
 
 interface CreateContextOptions {
   // session: Session | null
@@ -9,7 +10,7 @@ interface CreateContextOptions {
  * This is useful for testing when we don't want to mock Next.js' request/response
  */
 export async function createContextInner(_opts: CreateContextOptions) {
-  return {};
+  return { prisma };
 }
 
 export type Context = Awaited<ReturnType<typeof createContextInner>>;
@@ -19,7 +20,7 @@ export type Context = Awaited<ReturnType<typeof createContextInner>>;
  * @link https://trpc.io/docs/v11/context
  */
 export async function createContext(
-  opts: trpcNext.CreateNextContextOptions,
+  opts: CreateNextContextOptions
 ): Promise<Context> {
   // for API-response caching see https://trpc.io/docs/v11/caching
 

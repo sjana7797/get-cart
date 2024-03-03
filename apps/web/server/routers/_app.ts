@@ -1,6 +1,9 @@
-import { router } from "../trpc";
+import { createRouter } from "../trpc";
+import { productRouter } from "./product";
 
-const appRouter = router({});
+export const appRouter = createRouter({
+  product: productRouter,
+});
 
 // Export only the type of a router!
 // This prevents us from importing server code on the client.

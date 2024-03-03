@@ -1,26 +1,18 @@
-import {
-  Button,
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  Input,
-} from "@repo/ui";
+import { Button, Form } from "@repo/ui";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@repo/ui";
-import { productSchema } from "~/zod-schema/product";
+import { Product, productSchema } from "~/zod-schema/product";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { createProduct } from "~/api/api-clients";
 import { toast } from "@repo/ui/lib/sonner";
 import { useEffect } from "react";
+import ProductInputField from "./product-input-field";
+import ProductImages from "./product-images";
 
 function ProductInput() {
   // form definition
-  const form = useForm<z.infer<typeof productSchema>>({
+  const form = useForm<Product>({
     resolver: zodResolver(productSchema),
   });
 
@@ -41,7 +33,7 @@ function ProductInput() {
         className: "bg-green-500",
       });
     },
-    onError(error, variables, context) {
+    onError(error) {
       toast.error("Failed to create product", {
         description: error.message,
         className: "bg-red-500",
@@ -62,54 +54,34 @@ function ProductInput() {
         onSubmit={form.handleSubmit(onProductSubmit)}
         className="space-y-8 max-w-screen-md p-2"
       >
-        <FormField
-          control={form.control}
+        <ProductInputField
+          formDescription="This is product name."
+          formikForm={form}
+          label="Product Name"
+          placeholder="Product Name"
           name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="name" {...field} />
-              </FormControl>
-              <FormDescription>This is product name.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
         />
-        <FormField
-          control={form.control}
+        <ProductInputField
+          formDescription="This is product price."
+          formikForm={form}
+          type="number"
+          label="Product Price"
+          placeholder="Product Price"
           name="price"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Price</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="price"
-                  {...field}
-                  type="number"
-                  onChange={(event) => {
-                    field.onChange(event.target.valueAsNumber);
-                  }}
-                />
-              </FormControl>
-              <FormDescription>This is product price.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
         />
-        <FormField
-          control={form.control}
+        <ProductInputField
+          formDescription="This is product description."
+          formikForm={form}
+          label="Product Description"
+          placeholder="Product Description"
           name="description"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="description" {...field} />
-              </FormControl>
-              <FormDescription>This is product description.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
+        />
+        <ProductImages
+          formDescription="This is product images."
+          formikForm={form}
+          label="Product Image URL"
+          placeholder="Product Image URL"
+          name="productImages"
         />
         <Button type="submit" variant={"default"}>
           Submit

@@ -1,50 +1,41 @@
-/**
- * This is your entry point to setup the root configuration for tRPC on the server.
- * - `initTRPC` should only be used once per app.
- * - We export only the functionality that we use so we can enforce which base procedures should be used
- *
- * Learn how to create protected base procedures and other things below:
- * @link https://trpc.io/docs/v11/router
- * @link https://trpc.io/docs/v11/procedures
- */
-
 import { initTRPC } from "@trpc/server";
-import { transformer } from "~/utils/transformer";
+import superjson from "superjson";
 import type { Context } from "./context";
+import { Prisma } from "database";
+import { ZodError } from "zod";
 
 const t = initTRPC.context<Context>().create({
-  /**
-   * @link https://trpc.io/docs/v11/data-transformers
-   */
-  transformer,
-  /**
-   * @link https://trpc.io/docs/v11/error-formatting
-   */
-  errorFormatter({ shape }) {
-    return shape;
+  transformer: superjson,
+
+  errorFormatter({ shape, error }) {
+    return {
+      ...shape,
+      data: {
+        ...shape.data,
+        zodError:
+          error.cause instanceof ZodError ? error.cause.flatten() : null,
+        prismaError: isPrismaError(error.cause) ? error.cause : null,
+      },
+    };
   },
 });
 
 /**
  * Create a router
- * @link https://trpc.io/docs/v11/router
  */
-export const router = t.router;
+export const createRouter = t.router;
 
 /**
  * Create an unprotected procedure
- * @link https://trpc.io/docs/v11/procedures
  **/
 export const publicProcedure = t.procedure;
 
-/**
- * Merge multiple routers together
- * @link https://trpc.io/docs/v11/merging-routers
- */
-export const mergeRouters = t.mergeRouters;
-
-/**
- * Create a server-side caller
- * @link https://trpc.io/docs/v11/server/server-side-calls
- */
-export const createCallerFactory = t.createCallerFactory;
+export function isPrismaError(error: Error | undefined): boolean {
+  return (
+    error instanceof Prisma.PrismaClientKnownRequestError ||
+    error instanceof Prisma.PrismaClientUnknownRequestError ||
+    error instanceof Prisma.PrismaClientValidationError ||
+    error instanceof Prisma.PrismaClientRustPanicError ||
+    error instanceof Prisma.PrismaClientInitializationError
+  );
+}

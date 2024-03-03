@@ -6,9 +6,13 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
+    "strict": true,
     "paths": {
-      "~/*": ["./*"]
-    }
+      "~/*": ["./*"],
+      "@ui/*": ["../../packages/ui/*"]
+    },
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
