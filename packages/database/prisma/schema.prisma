@@ -28,7 +28,6 @@ model product {
   name          String
   price         Float
   description   String?
-  banner        banner[]
   productImages String[]
   category      Category
   createdAt     DateTime @default(now())
@@ -47,9 +46,9 @@ model user {
 
 model banner {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  productId String   @db.ObjectId
-  product   product  @relation(fields: [productId], references: [id])
+  image     String
   active    Boolean
+  href      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

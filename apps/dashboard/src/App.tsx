@@ -9,6 +9,7 @@ import { useAppSelector } from "./lib/store/hooks";
 import { useDispatch } from "react-redux";
 import { setProgress } from "~/lib/store/features/topLoadingBarSlice";
 import AddProduct from "./routes/add-product";
+import Banner from "./routes/banner";
 
 // react query client
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ function App() {
         { path: "/", element: <Home /> },
         { path: "/products", element: <Products /> },
         { path: "/add-product", element: <AddProduct /> },
+        { path: "/banner", element: <Banner /> },
       ],
       loader: () => {
         return <div>Loading...</div>;

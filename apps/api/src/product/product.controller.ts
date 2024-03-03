@@ -8,7 +8,7 @@ export class ProductController {
 
   @Get('all')
   async getProducts() {
-    return this.productService.products();
+    return await this.productService.products();
   }
 
   @Post('create')
@@ -16,6 +16,6 @@ export class ProductController {
     @Body()
     product: Prisma.productCreateInput,
   ) {
-    return this.productService.createProduct(product);
+    return await this.productService.createProduct(product);
   }
 }

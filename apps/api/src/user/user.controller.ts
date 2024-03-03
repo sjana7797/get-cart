@@ -9,12 +9,12 @@ export class UserController {
   //   get all users
   @Get()
   async findAll() {
-    return this.userService.findAll();
+    return await this.userService.findAll();
   }
 
   //   register a new user
   @Post('register')
   async register(@Body() user: Prisma.userCreateInput) {
-    return this.userService.register(user);
+    return await this.userService.register(user);
   }
 }

@@ -2,7 +2,6 @@ import { Button, Form } from "@repo/ui";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@repo/ui";
 import { Product, productSchema } from "~/zod-schema/product";
-import { z } from "zod";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { createProduct, getAllProducts } from "~/api/api-clients";
 import { toast } from "@repo/ui/lib/sonner";
@@ -18,7 +17,7 @@ function ProductInput() {
   });
 
   //   on product submit
-  const onProductSubmit = async (values: z.infer<typeof productSchema>) => {
+  const onProductSubmit = async (values: Product) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);

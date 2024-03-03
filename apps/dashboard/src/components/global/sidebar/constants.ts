@@ -1,5 +1,10 @@
 import type { LucideIcon } from "lucide-react";
-import { LayoutDashboard, ShoppingCart, PackagePlus } from "lucide-react";
+import {
+  LayoutDashboard,
+  ShoppingCart,
+  PackagePlus,
+  GalleryHorizontalEnd,
+} from "lucide-react";
 
 export type Nav = {
   title: string;
@@ -25,6 +30,12 @@ const addProduct: Nav = {
   title: "Add Product",
 };
 
-const navItems: Nav[] = [dashboard, products, addProduct];
+const banner: Nav = {
+  href: "/banner",
+  LucideIcon: GalleryHorizontalEnd,
+  title: "Banner",
+};
+
+const navItems: Nav[] = [dashboard, products, addProduct, banner];
 
 export { navItems };
