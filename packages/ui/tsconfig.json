@@ -2,11 +2,8 @@
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "paths": {
-      "@ui/*": ["./*"]
-    }
+    "strictNullChecks": true
   },
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules"],
+  "include": ["."]
 }

@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./reducers";
+import {} from "redux";
+import {} from "redux-thunk";
 
 export const makeStore = () => {
   return configureStore({
-    reducer: rootReducer,
+    reducer: {},
   });
 };
 

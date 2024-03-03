@@ -12,6 +12,7 @@ export * from "./components/ui/badge";
 export * from "./components/ui/dialog";
 export * from "./components/ui/switch";
 export * from "./components/ui/tooltip";
+export * from "./components/ui/alert-dialog";
 
 // external libraries
 export * from "@hookform/resolvers/zod";

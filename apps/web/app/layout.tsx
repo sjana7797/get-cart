@@ -1,6 +1,7 @@
 import "@repo/ui/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ReactNode } from "react";
 import StoreProvider from "~/components/ReduxStoreProvider";
 import Header from "~/components/global/header";
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }): JSX.Element {
   return (
     <html lang="en">

@@ -38,7 +38,7 @@ function BannerCard({ banner }: Props) {
     },
     // If the mutation fails,
     // use the context returned from onMutate to roll back
-    onError: (err, newBanner, context) => {
+    onError: (_err, _newBanner, context) => {
       queryClient.setQueryData(["banners"], context?.previousBanners);
     },
     // Always refetch after error or success:
