@@ -6,3 +6,13 @@ export function priceFormatter(price: number): string {
     currency: "INR",
   }).format(price);
 }
+
+export const categories = [
+  "camera",
+  "earphone",
+  "headphone",
+  "laptop",
+  "mobile",
+  "smartwatch",
+  "tablet",
+] as const;

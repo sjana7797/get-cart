@@ -5,6 +5,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  Skeleton,
 } from "@ui/index";
 import React from "react";
 import Autoplay from "@repo/ui/lib/carousel-plugin";
@@ -14,7 +15,12 @@ type Props = {};
 
 function Banner({}: Props) {
   // server interaction
-  const { data } = trpc.product.getBanner.useQuery();
+  const { data: banners, isLoading } = trpc.product.getBanner.useQuery(
+    undefined,
+    {
+      refetchInterval: false,
+    },
+  );
 
   return (
     <section className="p-5">
@@ -27,17 +33,23 @@ function Banner({}: Props) {
         }}
       >
         <CarouselContent>
-          {data?.map((product) => {
-            return (
-              <CarouselItem key={product.id}>
-                <img
-                  src="https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="banner1"
-                  className="w-full h-96 object-cover rounded-md"
-                />
-              </CarouselItem>
-            );
-          })}
+          {isLoading ? (
+            <CarouselItem>
+              <Skeleton className="w-full h-96 rounded-md bg-slate-300" />
+            </CarouselItem>
+          ) : (
+            banners?.map((banner) => {
+              return (
+                <CarouselItem key={banner.id}>
+                  <img
+                    src={banner.image}
+                    alt={banner.id}
+                    className="w-full h-96 object-cover rounded-md"
+                  />
+                </CarouselItem>
+              );
+            })
+          )}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

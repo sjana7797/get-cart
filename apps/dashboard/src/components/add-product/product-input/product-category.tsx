@@ -13,16 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@repo/ui";
-
-const categories = [
-  "camera",
-  "earphone",
-  "headphone",
-  "laptop",
-  "mobile",
-  "smartwatch",
-  "tablet",
-];
+import { categories } from "common";
 
 interface ProductCategoryProps extends SelectHTMLAttributes<HTMLSelectElement> {
   formikForm: UseFormReturn<{
