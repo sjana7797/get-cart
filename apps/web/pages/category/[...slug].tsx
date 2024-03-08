@@ -4,9 +4,7 @@ import BrandScrollContainer from "~/components/home/BrandScrollContainer";
 
 const allCategories: readonly string[] = [...categories];
 
-type Props = {};
-
-function Category({}: Props) {
+function Category() {
   return (
     <div className="">
       <BrandScrollContainer />

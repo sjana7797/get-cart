@@ -1,4 +1,4 @@
-import { Category } from "database";
+import type { Category } from "database";
 import type { LucideIcon } from "lucide-react";
 import {
   Camera,
@@ -10,9 +10,11 @@ import {
   Watch,
 } from "lucide-react";
 
-export const categoryIcon: {
+type CategoryIcon = {
   [key in Category]: LucideIcon;
-} = {
+};
+
+export const categoryIcon: CategoryIcon = {
   camera: Camera,
   earphone: Music2,
   headphone: Headphones,

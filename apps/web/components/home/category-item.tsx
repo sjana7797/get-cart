@@ -11,8 +11,6 @@ import Link from "next/link";
 
 const MotionLink = motion(Link);
 
-type Props = {};
-
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -28,7 +26,7 @@ const item = {
   show: { y: 0, opacity: 1 },
 };
 
-function CategoryItem({}: Props) {
+function CategoryItem() {
   return (
     <section className="p-5">
       <h2 className="text-3xl font-semibold text-blue-500 capitalize text-center">

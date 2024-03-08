@@ -11,9 +11,7 @@ import React from "react";
 import Autoplay from "@repo/ui/lib/carousel-plugin";
 import { trpc } from "~/utils/trpc";
 
-type Props = {};
-
-function Banner({}: Props) {
+function Banner() {
   // server interaction
   const { data: banners, isLoading } = trpc.product.getBanner.useQuery(
     undefined,
