@@ -5,7 +5,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@repo/ui";
+} from "@repo/ui/components/ui/tooltip";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -31,7 +31,7 @@ const item = {
 function CategoryItem({}: Props) {
   return (
     <section className="p-5">
-      <h2 className="text-3xl font-semibold text-emerald-500 capitalize text-center">
+      <h2 className="text-3xl font-semibold text-blue-500 capitalize text-center">
         shop by category
       </h2>
       <motion.div
@@ -49,7 +49,7 @@ function CategoryItem({}: Props) {
                 <TooltipTrigger asChild>
                   <MotionLink
                     href={`/category/${category}`}
-                    className="p-5 hover:bg-emerald-500 rounded-md hover:text-emerald-100 text-emerald-700 transition duration-200 ease-in-out cursor-pointer"
+                    className="p-5 hover:bg-blue-500 rounded-md hover:text-emerald-100 text-blue-700 transition duration-200 ease-in-out cursor-pointer"
                     variants={item}
                     whileHover={{ scale: 1.1 }}
                   >

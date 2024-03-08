@@ -6,6 +6,7 @@ module.exports = {
   content: [
     // Add the content for the web
     "./pages/**/*.{ts,tsx}",
+    "./layouts/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",

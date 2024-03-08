@@ -5,8 +5,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  Skeleton,
-} from "@ui/index";
+} from "@ui/components/ui/carousel";
+import { Skeleton } from "@ui/components/ui/skeleton";
 import React from "react";
 import Autoplay from "@repo/ui/lib/carousel-plugin";
 import { trpc } from "~/utils/trpc";

@@ -5,12 +5,10 @@ export const productRouter = createRouter({
   getBanner: publicProcedure.query(async ({ ctx }) => {
     const { prisma } = ctx;
 
-    const b = await prisma.banner.findMany({
+    const banners = await prisma.banner.findMany({
       where: { active: true },
     });
 
-    console.log(b, "b");
-
-    return b;
+    return banners;
   }),
 });
