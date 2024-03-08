@@ -1,15 +1,11 @@
-import { toast } from "@repo/ui/lib/sonner";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Brand } from "database";
-import { Trash2 } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@repo/ui/components/ui/card";
-import { Switch } from "@repo/ui/components/ui/switch";
 
 type Props = { brand: Brand };
 
 function BrandCard({ brand }: Props) {
   // query client
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   // server interaction
 

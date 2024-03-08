@@ -32,7 +32,7 @@ function ProductBrandSelect({
   name,
 }: ProductCategoryProps) {
   // server interaction for the brands
-  const { data: brands, isLoading } = useQuery({
+  const { data: brands } = useQuery({
     queryKey: ["brands"],
     queryFn: getBrands,
   });

@@ -22,7 +22,7 @@ import { Input } from "@repo/ui/components/ui/input";
 import { ModalProps } from "common";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useBrandMutation, useGetAllBrands } from "~/api";
+import { useBrandMutation } from "~/api";
 import { CreateBrandPayload, createBrandSchema } from "~/zod-schema/brand";
 
 type Props = ModalProps;

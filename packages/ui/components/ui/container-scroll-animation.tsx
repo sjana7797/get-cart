@@ -106,7 +106,7 @@ export const Card = ({
               {product.category}
             </div>
             <img
-              src={product.productImages[0]}
+              src={product.product_images[0]}
               className="rounded-tr-md rounded-tl-md text-sm "
               alt="thumbnail"
             />
