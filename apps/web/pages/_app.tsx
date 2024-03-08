@@ -7,7 +7,7 @@ import colors from "tailwindcss/colors";
 import { trpc } from "~/utils/trpc";
 import { ClerkProvider } from "@clerk/nextjs";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
 const authenticationPages = ["/sign-in/[[...index]]", "/sign-up/[[...index]]"];
 
@@ -16,9 +16,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const path = router.pathname;
 
-  const showHeader = useMemo(() => {
-    return !authenticationPages.includes(path);
-  }, [path]);
+  const [showHeader, setShowHeader] = useState(
+    !authenticationPages.includes(path),
+  );
+
+  useEffect(() => {
+    setShowHeader(!authenticationPages.includes(path));
+  }, []);
 
   return (
     <ClerkProvider
