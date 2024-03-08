@@ -1,6 +1,7 @@
 // cart slice
 
 import { createSlice } from "@reduxjs/toolkit";
+import type * as redux from "react-redux";
 
 const initialState = {
   isCartSideBarOpen: false,
