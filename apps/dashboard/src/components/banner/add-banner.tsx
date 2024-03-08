@@ -1,22 +1,4 @@
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  Input,
-  zodResolver,
-} from "@repo/ui";
+import { zodResolver } from "@repo/ui";
 import { toast } from "@repo/ui/lib/sonner";
 import { useMutation } from "@tanstack/react-query";
 import { useEffect } from "react";
@@ -24,6 +6,26 @@ import { useForm } from "react-hook-form";
 import { createBanner } from "~/api/api-clients";
 import { Banner, bannerSchema } from "~/zod-schema/banner";
 import type { Dispatch, SetStateAction } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@repo/ui/components/ui/dialog";
+import { Button } from "@repo/ui/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@repo/ui/components/ui/form";
+import { Input } from "@repo/ui/components/ui/input";
 
 type Props = {
   modalOpen: boolean;

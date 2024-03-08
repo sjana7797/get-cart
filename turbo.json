@@ -4,14 +4,20 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^db:generate"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [
+        ".env.development.local",
+        ".env.local",
+        ".env.development",
+        ".env"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
     "dev": {
       "cache": false,
-      "dependsOn": ["^db:up", "^db:generate"],
+      "dependsOn": ["^sp:start", "^db:generate"],
       "dotEnv": [
         ".env.development.local",
         ".env.local",
@@ -28,6 +34,9 @@
     "db:up": {
       "cache": false
     },
-    "db:studio": { "cache": false }
+    "db:studio": { "cache": false },
+    "sp:start": {
+      "cache": false
+    }
   }
 }

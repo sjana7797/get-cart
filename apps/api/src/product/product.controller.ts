@@ -14,7 +14,7 @@ export class ProductController {
   @Post('create')
   async createProduct(
     @Body()
-    product: Prisma.productCreateInput,
+    product: Prisma.ProductCreateInput,
   ) {
     return await this.productService.createProduct(product);
   }

@@ -1,3 +1,5 @@
+const { addVariablesForColors } = require("./lib/addVariablesForColors");
+
 /** @type {import('tailwindcss').Config} */
 import colors from "tailwindcss/colors";
 
@@ -164,6 +166,7 @@ module.exports = {
     },
   ],
   plugins: [
+    addVariablesForColors,
     require("tailwindcss-animate"),
     require("@headlessui/tailwindcss"),
     require("@tailwindcss/forms"),

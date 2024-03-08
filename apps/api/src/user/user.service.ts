@@ -10,7 +10,7 @@ export class UserService {
     return this.prismaService.user.findMany();
   }
 
-  async register(user: Prisma.userCreateInput) {
+  async register(user: Prisma.UserCreateInput) {
     return this.prismaService.user.create({
       data: user,
     });

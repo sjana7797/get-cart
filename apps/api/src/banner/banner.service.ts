@@ -6,7 +6,7 @@ import { Prisma } from 'database';
 export class BannerService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async createBanner(banner: Prisma.bannerCreateInput) {
+  async createBanner(banner: Prisma.BannerCreateInput) {
     return this.prismaService.banner.create({ data: banner });
   }
 
@@ -14,7 +14,7 @@ export class BannerService {
     return this.prismaService.banner.findMany();
   }
 
-  async updateBanner(banner: { data: Prisma.bannerUpdateInput; id: string }) {
+  async updateBanner(banner: { data: Prisma.BannerUpdateInput; id: string }) {
     return this.prismaService.banner.update({
       where: { id: banner.id },
       data: banner.data,

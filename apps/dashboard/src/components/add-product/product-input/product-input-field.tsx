@@ -5,8 +5,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  Input,
-} from "@repo/ui";
+} from "@repo/ui/components/ui/form";
+import { Input } from "@repo/ui/components/ui/input";
 import { InputHTMLAttributes } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { ProductInputKey } from "~/zod-schema/product";

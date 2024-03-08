@@ -8,14 +8,14 @@ import {
   Query,
 } from '@nestjs/common';
 import { BannerService } from './banner.service';
-import { Prisma } from '@prisma/client';
+import { Prisma } from 'database';
 
 @Controller('banner')
 export class BannerController {
   constructor(private readonly bannerService: BannerService) {}
 
   @Post('create')
-  async createBanner(@Body() createBanner: Prisma.bannerCreateInput) {
+  async createBanner(@Body() createBanner: Prisma.BannerCreateInput) {
     return await this.bannerService.createBanner(createBanner);
   }
 
@@ -26,7 +26,7 @@ export class BannerController {
 
   @Patch('update')
   async updateBanner(
-    @Body() updateBanner: { data: Prisma.bannerUpdateInput; id: string },
+    @Body() updateBanner: { data: Prisma.BannerUpdateInput; id: string },
   ) {
     return await this.bannerService.updateBanner(updateBanner);
   }

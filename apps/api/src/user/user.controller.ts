@@ -14,7 +14,7 @@ export class UserController {
 
   //   register a new user
   @Post('register')
-  async register(@Body() user: Prisma.userCreateInput) {
+  async register(@Body() user: Prisma.UserCreateInput) {
     return await this.userService.register(user);
   }
 }

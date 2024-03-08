@@ -1,4 +1,5 @@
-import { Button, Form } from "@repo/ui";
+import { Form } from "@repo/ui/components/ui/form";
+import { Button } from "@repo/ui/components/ui/button";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@repo/ui";
 import { Product, productSchema } from "~/zod-schema/product";

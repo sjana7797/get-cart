@@ -1,16 +1,16 @@
 import {
-  Badge,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/ui";
-import { product } from "database";
+} from "@repo/ui/components/ui/card";
+import type { Product } from "database";
 import { priceFormatter } from "common";
+import { Badge } from "@repo/ui/components/ui/badge";
 
-type Props = { product: product };
+type Props = { product: Product };
 
 function ProductCard({ product }: Props) {
   return (

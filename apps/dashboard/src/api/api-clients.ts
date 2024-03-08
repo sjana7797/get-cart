@@ -1,12 +1,12 @@
-import { Product } from "~/zod-schema/product";
+import { Product as ProductSchema } from "~/zod-schema/product";
 import { nestJsInstanceRoutes } from "./api-routes";
 import { nestJsInstance } from "./instances";
 import { AxiosError } from "axios";
-import { product, banner, Prisma } from "database";
+import type { Product, Banner, Prisma } from "database";
 import { GetAnalyticResponse } from "./response-types";
-import { Banner } from "~/zod-schema/banner";
+import { Banner as BannerSchema } from "~/zod-schema/banner";
 
-async function createProduct(product: Product) {
+async function createProduct(product: ProductSchema) {
   try {
     const response = await nestJsInstance.post(
       nestJsInstanceRoutes.createProduct,
@@ -23,7 +23,7 @@ async function createProduct(product: Product) {
 
 async function getAllProducts() {
   try {
-    const response = await nestJsInstance.get<product[]>(
+    const response = await nestJsInstance.get<Product[]>(
       nestJsInstanceRoutes.getAllProducts,
     );
     return response.data;
@@ -49,9 +49,9 @@ async function getSpecs() {
   }
 }
 
-async function createBanner(banner: Banner) {
+async function createBanner(banner: BannerSchema) {
   try {
-    const response = await nestJsInstance.post<Banner>(
+    const response = await nestJsInstance.post<BannerSchema>(
       nestJsInstanceRoutes.createBanner,
       banner,
     );
@@ -66,7 +66,7 @@ async function createBanner(banner: Banner) {
 
 async function getBanners() {
   try {
-    const response = await nestJsInstance.get<banner[]>(
+    const response = await nestJsInstance.get<Banner[]>(
       nestJsInstanceRoutes.getBanners,
     );
     return response.data;
@@ -82,11 +82,11 @@ async function updateBanner({
   banner,
   bannerId,
 }: {
-  banner: Prisma.bannerUpdateInput;
+  banner: Prisma.BannerUpdateInput;
   bannerId: string;
 }) {
   try {
-    const response = await nestJsInstance.patch<Banner>(
+    const response = await nestJsInstance.patch<BannerSchema>(
       `${nestJsInstanceRoutes.updateBanner}`,
       {
         data: banner,
@@ -104,7 +104,7 @@ async function updateBanner({
 
 async function deleteBanner(bannerId: string) {
   try {
-    const response = await nestJsInstance.delete<Banner>(
+    const response = await nestJsInstance.delete<BannerSchema>(
       `${nestJsInstanceRoutes.deleteBanner}`,
       { params: { bannerId } },
     );

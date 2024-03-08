@@ -1,4 +1,4 @@
-import { Skeleton } from "@repo/ui";
+import { Skeleton } from "@repo/ui/components/ui/skeleton";
 import { Card } from "@repo/ui/components/tremor";
 
 function LoadingSpec() {

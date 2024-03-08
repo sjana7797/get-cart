@@ -1,13 +1,13 @@
 import {
-  Button,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-  Input,
-} from "@repo/ui";
+} from "@repo/ui/components/ui/form";
+import { Button } from "@repo/ui/components/ui/button";
+import { Input } from "@repo/ui/components/ui/input";
 import { InputHTMLAttributes, useState } from "react";
 import { UseFormReturn } from "react-hook-form";
 

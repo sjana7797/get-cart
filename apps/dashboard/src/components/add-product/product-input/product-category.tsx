@@ -7,12 +7,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
+} from "@repo/ui/components/ui/form";
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@repo/ui";
+} from "@repo/ui/components/ui/select";
 import { categories } from "common";
 
 interface ProductCategoryProps extends SelectHTMLAttributes<HTMLSelectElement> {

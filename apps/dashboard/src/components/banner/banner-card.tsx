@@ -1,11 +1,12 @@
-import { Card, CardContent, CardFooter, Switch } from "@repo/ui";
 import { toast } from "@repo/ui/lib/sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { banner } from "database";
+import { Banner } from "database";
 import { deleteBanner, updateBanner } from "~/api/api-clients";
 import { Trash2 } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@repo/ui/components/ui/card";
+import { Switch } from "@repo/ui/components/ui/switch";
 
-type Props = { banner: banner };
+type Props = { banner: Banner };
 
 function BannerCard({ banner }: Props) {
   // query client
@@ -27,7 +28,7 @@ function BannerCard({ banner }: Props) {
       const previousBanners = queryClient.getQueryData(["banners"]);
 
       // Optimistically update to the new value
-      queryClient.setQueryData(["banners"], (old: banner[]) => {
+      queryClient.setQueryData(["banners"], (old: Banner[]) => {
         return old.map((b) =>
           b.id === bannerId ? { ...b, active: !b.active } : b,
         );

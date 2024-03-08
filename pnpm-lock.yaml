@@ -371,6 +371,8 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
+  packages/supabase-app: {}
+
   packages/typescript-config: {}
 
   packages/ui:
@@ -423,12 +425,18 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      database:
+        specifier: workspace:database
+        version: link:../database
       embla-carousel-autoplay:
         specifier: ^8.0.0
         version: 8.0.0(embla-carousel@8.0.0)
       embla-carousel-react:
         specifier: ^8.0.0
         version: 8.0.0(react@18.2.0)
+      framer-motion:
+        specifier: ^11.0.8
+        version: 11.0.8(react-dom@18.2.0)(react@18.2.0)
       lucide-react:
         specifier: ^0.344.0
         version: 0.344.0(react@18.2.0)
@@ -2999,7 +3007,7 @@ packages:
     dependencies:
       immer: 10.0.3
       react: 18.2.0
-      react-redux: 9.1.0(@types/react@18.2.46)(react@18.2.0)(redux@5.0.1)
+      react-redux: 9.1.0(@types/react@18.2.61)(react@18.2.0)(redux@5.0.1)
       redux: 5.0.1
       redux-thunk: 3.1.0(redux@5.0.1)
       reselect: 5.1.0
