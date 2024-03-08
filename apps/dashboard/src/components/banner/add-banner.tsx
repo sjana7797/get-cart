@@ -1,4 +1,4 @@
-import { zodResolver } from "@repo/ui";
+import { zodResolver } from "@repo/ui/lib/resolvers-zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Banner, bannerSchema } from "~/zod-schema/banner";

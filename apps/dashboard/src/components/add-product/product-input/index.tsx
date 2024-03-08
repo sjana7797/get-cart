@@ -1,7 +1,7 @@
 import { Form } from "@repo/ui/components/ui/form";
 import { Button } from "@repo/ui/components/ui/button";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@repo/ui";
+import { zodResolver } from "@repo/ui/lib/resolvers-zod";
 import { Product, productSchema } from "~/zod-schema/product";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { createProduct, getAllProducts } from "~/api/api-clients";
