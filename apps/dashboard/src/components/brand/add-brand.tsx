@@ -1,4 +1,4 @@
-import { zodResolver } from "@repo/ui";
+import { zodResolver } from "@repo/ui/lib/resolvers-zod";
 import { Button } from "@repo/ui/components/ui/button";
 import {
   Dialog,
