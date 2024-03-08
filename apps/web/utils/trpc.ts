@@ -7,8 +7,7 @@
 import { loggerLink, httpLink } from "@trpc/client";
 import { createTRPCNext } from "@trpc/next";
 import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server";
-import { type AppRouter } from "~/server/routers/_app";
-import reactQuery from "@trpc/react-query";
+import { type AppRouter } from "~/server/routers";
 import superjson from "superjson";
 
 const getBaseUrl = () => {
