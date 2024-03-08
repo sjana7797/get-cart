@@ -37,6 +37,13 @@
     "db:studio": { "cache": false },
     "sp:start": {
       "cache": false
+    },
+    "api#generate": {
+      "cache": false
+    },
+    "api#build": {
+      "dependsOn": ["api#generate"],
+      "outputs": ["dist/**"]
     }
   }
 }
