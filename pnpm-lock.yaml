@@ -174,6 +174,9 @@ importers:
       react-top-loading-bar:
         specifier: ^2.3.1
         version: 2.3.1(react@18.2.0)
+      redux:
+        specifier: ^5.0.1
+        version: 5.0.1
       redux-thunk:
         specifier: ^3.1.0
         version: 3.1.0(redux@5.0.1)
@@ -193,9 +196,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.19
         version: 18.2.19
-      '@types/redux':
-        specifier: ^3.6.0
-        version: 3.6.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.0.2
         version: 7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -274,6 +274,9 @@ importers:
       react-redux:
         specifier: ^9.1.0
         version: 9.1.0(@types/react@18.2.46)(react@18.2.0)(redux@5.0.1)
+      redux:
+        specifier: ^5.0.1
+        version: 5.0.1
       redux-thunk:
         specifier: ^3.1.0
         version: 3.1.0(redux@5.0.1)
@@ -308,9 +311,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.18
         version: 18.2.18
-      '@types/redux':
-        specifier: ^3.6.0
-        version: 3.6.0
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
@@ -3687,13 +3687,6 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
-
-  /@types/redux@3.6.0:
-    resolution: {integrity: sha512-ic+60DXHW5seNyqFvfr7Sk5cnXs+HsF9tIeIaxjOuSP5kzgDXC+AzKTYmjAfuLx4Sccm/0vjwBQj3OOkUkwOqg==}
-    deprecated: This is a stub types definition for Redux (https://github.com/reactjs/redux). Redux provides its own type definitions, so you don't need @types/redux installed!
-    dependencies:
-      redux: 5.0.1
-    dev: true
 
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
@@ -9087,6 +9080,7 @@ packages:
 
   /redux@5.0.1:
     resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
+    dev: false
 
   /reflect-metadata@0.1.14:
     resolution: {integrity: sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==}

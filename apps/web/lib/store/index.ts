@@ -1,6 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import redux from "redux";
-import reduxThunk from "redux-thunk";
 import cartReducer from "./features/cartSlice";
 
 export const makeStore = () => {
