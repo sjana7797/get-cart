@@ -7,4 +7,6 @@ export const nestJsInstanceRoutes = {
   getBanners: "/banner/all",
   updateBanner: "/banner/update",
   deleteBanner: "/banner/delete",
+  getBrands: "/brand/all",
+  addBrand: "/brand/create",
 } as const;

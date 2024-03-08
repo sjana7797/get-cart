@@ -1,5 +1,4 @@
 import { SelectHTMLAttributes } from "react";
-import { UseFormReturn } from "react-hook-form";
 import {
   FormControl,
   FormDescription,
@@ -15,22 +14,29 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@repo/ui/components/ui/select";
-import { categories } from "common";
 import { ProductAddForm } from "./type";
+import { useQuery } from "@tanstack/react-query";
+import { getBrands } from "~/api/api-clients";
 
 interface ProductCategoryProps extends SelectHTMLAttributes<HTMLSelectElement> {
   formikForm: ProductAddForm;
   formDescription: string;
   label: string;
-  name: "category";
+  name: "brandId";
 }
 
-function ProductCategory({
+function ProductBrandSelect({
   formDescription,
   formikForm,
   label,
   name,
 }: ProductCategoryProps) {
+  // server interaction for the brands
+  const { data: brands, isLoading } = useQuery({
+    queryKey: ["brands"],
+    queryFn: getBrands,
+  });
+
   return (
     <FormField
       control={formikForm.control}
@@ -46,17 +52,17 @@ function ProductCategory({
               {...field}
             >
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Category" />
+                <SelectValue placeholder="Brand" />
               </SelectTrigger>
               <SelectContent>
-                {categories.map((category) => {
+                {brands?.map((brand) => {
                   return (
                     <SelectItem
                       className="capitalize"
-                      key={category}
-                      value={category}
+                      key={brand.id}
+                      value={brand.id}
                     >
-                      {category}
+                      {brand.name}
                     </SelectItem>
                   );
                 })}
@@ -71,4 +77,4 @@ function ProductCategory({
   );
 }
 
-export default ProductCategory;
+export default ProductBrandSelect;

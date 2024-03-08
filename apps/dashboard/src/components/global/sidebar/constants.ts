@@ -36,6 +36,12 @@ const banner: Nav = {
   title: "Banner",
 };
 
-const navItems: Nav[] = [dashboard, products, addProduct, banner];
+const brand: Nav = {
+  href: "/brand",
+  LucideIcon: GalleryHorizontalEnd,
+  title: "Brand",
+};
+
+const navItems: Nav[] = [dashboard, products, addProduct, banner, brand];
 
 export { navItems };

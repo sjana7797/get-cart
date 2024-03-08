@@ -9,24 +9,11 @@ import {
 import { Button } from "@repo/ui/components/ui/button";
 import { Input } from "@repo/ui/components/ui/input";
 import { InputHTMLAttributes, useState } from "react";
-import { UseFormReturn } from "react-hook-form";
+import { ProductAddForm } from "./type";
 
 interface ProductImagesInputProps
   extends InputHTMLAttributes<HTMLInputElement> {
-  formikForm: UseFormReturn<{
-    name: string;
-    price: number;
-    category:
-      | "mobile"
-      | "laptop"
-      | "tablet"
-      | "headphone"
-      | "earphone"
-      | "smartwatch"
-      | "camera";
-    description?: string | undefined;
-    productImages?: string[] | undefined;
-  }>;
+  formikForm: ProductAddForm;
   formDescription: string;
   label: string;
   name: "productImages";

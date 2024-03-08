@@ -47,9 +47,6 @@ importers:
       class-validator:
         specifier: ^0.14.1
         version: 0.14.1
-      database:
-        specifier: workspace:*
-        version: link:../../packages/database
       prisma:
         specifier: ^5.10.2
         version: 5.10.2

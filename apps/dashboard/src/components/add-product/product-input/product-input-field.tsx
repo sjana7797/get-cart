@@ -8,24 +8,11 @@ import {
 } from "@repo/ui/components/ui/form";
 import { Input } from "@repo/ui/components/ui/input";
 import { InputHTMLAttributes } from "react";
-import { UseFormReturn } from "react-hook-form";
 import { ProductInputKey } from "~/zod-schema/product";
+import { ProductAddForm } from "./type";
 
 interface ProductInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  formikForm: UseFormReturn<{
-    name: string;
-    price: number;
-    category:
-      | "mobile"
-      | "laptop"
-      | "tablet"
-      | "headphone"
-      | "earphone"
-      | "smartwatch"
-      | "camera";
-    description?: string | undefined;
-    productImages?: string[] | undefined;
-  }>;
+  formikForm: ProductAddForm;
   formDescription: string;
   label: string;
   name: ProductInputKey;

@@ -11,4 +11,12 @@ export const productRouter = createRouter({
 
     return banners;
   }),
+
+  // get all products
+  getProducts: publicProcedure.query(async ({ ctx }) => {
+    const { prisma } = ctx;
+    const products = await prisma.product.findMany({});
+
+    return products;
+  }),
 });

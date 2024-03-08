@@ -8,7 +8,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { BannerService } from './banner.service';
-import { Prisma } from 'database';
+import { Prisma } from '@prisma/client';
 
 @Controller('banner')
 export class BannerController {

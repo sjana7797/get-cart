@@ -14,6 +14,7 @@ const productSchema = z.object({
     "smartwatch",
     "camera",
   ]),
+  brandId: z.string(),
 });
 
 export type Product = z.infer<typeof productSchema>;

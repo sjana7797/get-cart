@@ -26,6 +26,7 @@ import {
   FormMessage,
 } from "@repo/ui/components/ui/form";
 import { Input } from "@repo/ui/components/ui/input";
+import { useCreateBannerMutation } from "~/api";
 
 type Props = {
   modalOpen: boolean;
@@ -39,26 +40,12 @@ function AddBanner({ modalOpen, setModalOpen }: Props) {
   });
 
   //   server interaction
-  const { mutateAsync: createBannerMutation } = useMutation({
-    mutationFn: createBanner,
-    onSettled() {
-      toast.success("Banner created successfully", {
-        duration: 2000,
-        closeButton: true,
-      });
-    },
-    onError(error) {
-      toast.error(error.message, {
-        duration: 2000,
-        closeButton: true,
-      });
-    },
-  });
+  const { mutateAsync: createBanner } = useCreateBannerMutation();
 
   //   create banner on form submit
   const createBannerOnSubmit = async (data: Banner) => {
     // create banner
-    await createBannerMutation(data);
+    await createBanner(data);
   };
 
   // reset form after successful submission

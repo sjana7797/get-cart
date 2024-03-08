@@ -9,8 +9,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 enum Category {
@@ -24,39 +25,39 @@ enum Category {
 }
 
 model Product {
-  id            String   @id @default(uuid())
-  name          String
-  price         Float
-  brandId       String
-  brand         Brand    @relation(fields: [brandId], references: [id])
-  description   String?
-  productImages String[]
-  category      Category
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id             String   @id @default(uuid())
+  name           String
+  price          Float
+  brand_id       String
+  brand          Brand    @relation(fields: [brand_id], references: [id])
+  description    String?
+  product_images String[]
+  category       Category
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
 }
 
 model User {
-  id         String   @id @default(uuid())
-  email      String   @unique
-  name       String?
-  profileImg String?
-  hashedPass String
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id          String   @id @default(uuid())
+  email       String   @unique
+  name        String?
+  profile_img String?
+  hashed_pass String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
 }
 
 model Banner {
-  id        String   @id @default(uuid())
-  image     String
-  active    Boolean
-  href      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String   @id @default(uuid())
+  image      String
+  active     Boolean
+  href       String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
 model Brand {
-  id      String    @id @default(uuid())
-  name    String
-  Product Product[]
+  id       String    @id @default(uuid())
+  name     String
+  products Product[]
 }

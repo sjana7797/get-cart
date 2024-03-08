@@ -1,13 +1,19 @@
 import React from "react";
 import { ContainerScroll } from "@repo/ui/components/ui/container-scroll-animation";
+import { trpc } from "~/utils/trpc";
 
 type Props = {};
 
 function BrandScrollContainer({}: Props) {
+  const { data: products } = trpc.product.getProducts.useQuery();
+
+  if (!products) {
+    return <div>Loading</div>;
+  }
   return (
     <div className="flex flex-col overflow-hidden">
-      {/* <ContainerScroll
-        users={users}
+      <ContainerScroll
+        products={products}
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
@@ -18,7 +24,7 @@ function BrandScrollContainer({}: Props) {
             </h1>
           </>
         }
-      /> */}
+      />
     </div>
   );
 }

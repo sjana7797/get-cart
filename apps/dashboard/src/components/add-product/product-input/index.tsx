@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import ProductInputField from "./product-input-field";
 import ProductImages from "./product-images";
 import ProductCategory from "./product-category";
+import ProductBrandSelect from "./brand-input";
 
 function ProductInput() {
   // form definition
@@ -21,11 +22,18 @@ function ProductInput() {
   const onProductSubmit = async (values: Product) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
-    await createProductMutate(values);
+    await createProductMutate({
+      name: values.name,
+      category: values.category,
+      price: values.price,
+      description: values.description,
+      brand_id: values.brandId,
+      product_images: values.productImages,
+    });
   };
 
   // server interaction
+
   // get all products query
   const { refetch: refetchProducts } = useQuery({
     queryKey: ["products"],
@@ -89,6 +97,12 @@ function ProductInput() {
           formikForm={form}
           label="Product Description"
           name="category"
+        />
+        <ProductBrandSelect
+          formDescription="This is product description."
+          formikForm={form}
+          label="Product Description"
+          name="brandId"
         />
         <ProductImages
           formDescription="This is product images."

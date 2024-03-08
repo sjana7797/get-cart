@@ -18,7 +18,7 @@ function ProductCard({ product }: Props) {
       <CardHeader>
         <CardTitle className="flex gap-x-2 items-center">
           <img
-            src={product.productImages[0]}
+            src={product.product_images[0]}
             alt=""
             className="w-10 h-10 object-cover rounded-full"
           />
