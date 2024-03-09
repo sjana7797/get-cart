@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ProductService } from './product.service';
-import { Prisma } from '@prisma/client';
+import { ProductDto } from './dto/product.dto';
 
 @Controller('product')
 export class ProductController {
@@ -14,7 +14,7 @@ export class ProductController {
   @Post('create')
   async createProduct(
     @Body()
-    product: Prisma.ProductCreateInput,
+    product: ProductDto,
   ) {
     return await this.productService.createProduct(product);
   }
