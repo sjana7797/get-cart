@@ -1,7 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { HttpErrorByCode } from '@nestjs/common/utils/http-error-by-code.util';
-import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { CreateBrandDto } from './brand.dto';
 
 @Injectable()
 export class BrandService {
@@ -13,7 +12,7 @@ export class BrandService {
     return brands;
   }
 
-  async addBrand({ name }: Prisma.BrandCreateInput) {
+  async addBrand({ name }: CreateBrandDto) {
     // check if the brand already exists
     const brand = await this.prismaService.brand.findFirst({
       where: { name },
