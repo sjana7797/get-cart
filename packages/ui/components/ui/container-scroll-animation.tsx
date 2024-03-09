@@ -102,18 +102,11 @@ export const Card = ({
                 "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
             }}
           >
-            <div className="absolute top-2 right-2 rounded-full text-xs font-bold bg-white px-2 py-1">
-              {product.category}
-            </div>
             <img
               src={product.product_images[0]}
-              className="rounded-tr-md rounded-tl-md text-sm "
+              className="rounded-tr-md rounded-tl-md object-contain object-center w-[300px] h-[300px]"
               alt="thumbnail"
             />
-            <div className="p-4">
-              <h1 className="font-semibold text-sm ">{product.name}</h1>
-              {/* <h2 className=" text-gray-500 text-xs ">{product.designation}</h2> */}
-            </div>
           </motion.div>
         ))}
       </div>

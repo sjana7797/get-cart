@@ -4,6 +4,8 @@ import {
   ShoppingCart,
   PackagePlus,
   GalleryHorizontalEnd,
+  CaseUpper,
+  CreativeCommons,
 } from "lucide-react";
 
 export type Nav = {
@@ -38,7 +40,7 @@ const banner: Nav = {
 
 const brand: Nav = {
   href: "/brand",
-  LucideIcon: GalleryHorizontalEnd,
+  LucideIcon: CreativeCommons,
   title: "Brand",
 };
 
