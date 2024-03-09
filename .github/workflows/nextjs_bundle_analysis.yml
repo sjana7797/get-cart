@@ -32,8 +32,8 @@ jobs:
     timeout-minutes: 15
     env:
       DATABASE_URL: "postgres://doesntmatter.com"
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
-      CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "hdshchsdcsdcs"
+      CLERK_SECRET_KEY: "dsvsdv"
 
     steps:
       - uses: actions/checkout@v3
