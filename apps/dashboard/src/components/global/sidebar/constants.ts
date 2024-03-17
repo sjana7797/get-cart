@@ -4,7 +4,6 @@ import {
   ShoppingCart,
   PackagePlus,
   GalleryHorizontalEnd,
-  CaseUpper,
   CreativeCommons,
 } from "lucide-react";
 

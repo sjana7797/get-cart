@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { Prisma } from '@prisma/client';
+import { Banner } from '@prisma/client';
 import { CreateBannerDto, UpdateBannerDto } from './banner.dto';
+import { redis } from 'cache';
 
 @Injectable()
 export class BannerService {
@@ -12,7 +13,21 @@ export class BannerService {
   }
 
   async getBanners() {
-    return this.prismaService.banner.findMany();
+    let banners: Banner[];
+
+    const bannersCache = await redis.get('banners');
+
+    if (bannersCache) {
+      banners = JSON.parse(bannersCache);
+    } else {
+      // get the data from the db
+      banners = await this.prismaService.banner.findMany();
+
+      // set the cache in banners
+      redis.set('banners', JSON.stringify(banners));
+    }
+
+    return banners;
   }
 
   async updateBanner(banner: UpdateBannerDto) {
@@ -24,10 +39,10 @@ export class BannerService {
 
   /**
    * @description delete a banner by id. can also do soft delete
-   * @param bannerId
-   * @returns
+   * @param bannerId {string}
+   * @returns {Promise<Banner>}
    */
-  async deleteBanner(bannerId: string) {
+  async deleteBanner(bannerId: string): Promise<Banner> {
     // delete the banner
     return this.prismaService.banner.delete({ where: { id: bannerId } });
 
