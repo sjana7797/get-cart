@@ -1,10 +1,10 @@
 {
   "name": "database",
   "version": "0.0.0",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "db:generate": "prisma generate",
+    "db:generate": "tsc --build && prisma generate",
     "db:push": "prisma db push --skip-generate",
     "db:up": "docker compose up -d || docker-compose up -d",
     "db:studio": "prisma studio"
@@ -13,6 +13,9 @@
     "@prisma/client": "^5.10.2"
   },
   "devDependencies": {
-    "prisma": "^5.10.2"
+    "prisma": "^5.10.2",
+    "typescript": "^5.4.2",
+    "@types/node": "^20.10.6",
+    "@repo/typescript-config": "workspace:*"
   }
 }

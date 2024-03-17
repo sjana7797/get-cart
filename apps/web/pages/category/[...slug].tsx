@@ -1,4 +1,4 @@
-import { categories } from "common";
+import { categories } from "common/index";
 import { GetServerSideProps } from "next";
 import BrandScrollContainer from "~/components/home/BrandScrollContainer";
 

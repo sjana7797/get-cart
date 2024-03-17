@@ -1,4 +1,4 @@
-import { categories } from "common";
+import { categories } from "common/index";
 import { categoryIcon } from "./constants";
 import {
   Tooltip,

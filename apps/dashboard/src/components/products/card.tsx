@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@repo/ui/components/ui/card";
 import type { Product } from "database";
-import { priceFormatter } from "common";
+import { priceFormatter } from "common/index";
 import { Badge } from "@repo/ui/components/ui/badge";
 
 type Props = { product: Product };

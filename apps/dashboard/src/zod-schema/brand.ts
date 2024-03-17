@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "common/zod";
 
 export const createBrandSchema = z.object({
   name: z.string(),
