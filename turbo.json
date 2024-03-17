@@ -42,7 +42,7 @@
       "cache": false
     },
     "api#build": {
-      "dependsOn": ["api#generate", "cache#build"],
+      "dependsOn": ["api#generate", "cache#build", "^db:generate"],
       "outputs": ["dist/**"]
     },
     "cache#build": {
