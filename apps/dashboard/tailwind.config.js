@@ -1,3 +1,3 @@
-import * as tailwindcss from "@repo/ui/tailwind.config";
+import * as tailwindcss from "@get-cart/ui/tailwind.config";
 
 module.exports = tailwindcss;

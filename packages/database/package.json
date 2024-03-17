@@ -16,6 +16,6 @@
     "prisma": "^5.10.2",
     "typescript": "^5.4.2",
     "@types/node": "^20.10.6",
-    "@repo/typescript-config": "workspace:*"
+    "@get-cart/typescript-config": "workspace:*"
   }
 }

@@ -1,4 +1,4 @@
-import { Card } from "@repo/ui/components/tremor";
+import { Card } from "@get-cart/ui/components/tremor";
 
 type Props = {
   title: string;

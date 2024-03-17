@@ -1,10 +1,10 @@
-import { toast } from "@repo/ui/lib/sonner";
+import { toast } from "@get-cart/ui/lib/sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Banner } from "database";
 import { deleteBanner, updateBanner } from "~/api/api-clients";
 import { Trash2 } from "common/lucide";
-import { Card, CardContent, CardFooter } from "@repo/ui/components/ui/card";
-import { Switch } from "@repo/ui/components/ui/switch";
+import { Card, CardContent, CardFooter } from "@get-cart/ui/components/ui/card";
+import { Switch } from "@get-cart/ui/components/ui/switch";
 
 type Props = { banner: Banner };
 

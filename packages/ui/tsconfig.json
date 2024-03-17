@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@get-cart/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": "./",
     "strictNullChecks": true

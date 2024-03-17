@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createBanner, createBrand, getBrands } from "./api-clients";
-import { toast } from "@repo/ui/lib/sonner";
+import { toast } from "@get-cart/ui/lib/sonner";
 
 export const useBrandMutation = () => {
   const queryClient = useQueryClient();

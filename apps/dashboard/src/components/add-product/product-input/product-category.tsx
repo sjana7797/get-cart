@@ -6,14 +6,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@repo/ui/components/ui/form";
+} from "@get-cart/ui/components/ui/form";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@repo/ui/components/ui/select";
+} from "@get-cart/ui/components/ui/select";
 import { categories } from "common/index";
 import { ProductAddForm } from "./type";
 

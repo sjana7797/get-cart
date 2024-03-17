@@ -1,1 +1,1 @@
-module.exports = require("@repo/ui/postcss.config.cjs");
+module.exports = require("@get-cart/ui/postcss.config.cjs");

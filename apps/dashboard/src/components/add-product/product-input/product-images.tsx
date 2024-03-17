@@ -5,9 +5,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@repo/ui/components/ui/form";
-import { Button } from "@repo/ui/components/ui/button";
-import { Input } from "@repo/ui/components/ui/input";
+} from "@get-cart/ui/components/ui/form";
+import { Button } from "@get-cart/ui/components/ui/button";
+import { Input } from "@get-cart/ui/components/ui/input";
 import { InputHTMLAttributes, useState } from "react";
 import { ProductAddForm } from "./type";
 

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import type { Nav } from "./constants";
-import { cn } from "@repo/ui/lib/utils";
+import { cn } from "@get-cart/ui/lib/utils";
 
 type Props = Nav;
 

@@ -7,7 +7,7 @@ import {
 } from "@ui/components/ui/carousel";
 import { Skeleton } from "@ui/components/ui/skeleton";
 import React from "react";
-import Autoplay from "@repo/ui/lib/carousel-plugin";
+import Autoplay from "@get-cart/ui/lib/carousel-plugin";
 import { trpc } from "~/utils/trpc";
 
 function Banner() {

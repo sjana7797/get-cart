@@ -5,7 +5,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@repo/ui/components/ui/tooltip";
+} from "@get-cart/ui/components/ui/tooltip";
 import { motion } from "framer-motion";
 import Link from "next/link";
 

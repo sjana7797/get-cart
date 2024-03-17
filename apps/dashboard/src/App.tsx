@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@repo/ui/components/ui/sonner";
+import { Toaster } from "@get-cart/ui/components/ui/sonner";
 import Products from "./routes/products";
 import Root from "./routes/root";
 import LoadingBar from "react-top-loading-bar";

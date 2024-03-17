@@ -9,8 +9,8 @@
     "prepare": "husky && husky install"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@get-cart/eslint-config": "workspace:*",
+    "@get-cart/typescript-config": "workspace:*",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.57.0",
     "husky": "^9.0.11",

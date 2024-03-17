@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { UserRound, Search, ShoppingCart } from "common/lucide";
-import { Button } from "@repo/ui/components/ui/button";
-import { Input } from "@repo/ui/components/ui/input";
+import { Button } from "@get-cart/ui/components/ui/button";
+import { Input } from "@get-cart/ui/components/ui/input";
 import CartSidebar from "./cart-sidebar";
 import { useDispatch } from "common/react-redux";
 import { toggleCartSidebar } from "~/lib/store/features/cartSlice";

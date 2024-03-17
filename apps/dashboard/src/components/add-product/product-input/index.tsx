@@ -1,11 +1,11 @@
-import { Form } from "@repo/ui/components/ui/form";
-import { Button } from "@repo/ui/components/ui/button";
+import { Form } from "@get-cart/ui/components/ui/form";
+import { Button } from "@get-cart/ui/components/ui/button";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@repo/ui/lib/resolvers-zod";
+import { zodResolver } from "@get-cart/ui/lib/resolvers-zod";
 import { Product, productSchema } from "~/zod-schema/product";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { createProduct, getAllProducts } from "~/api/api-clients";
-import { toast } from "@repo/ui/lib/sonner";
+import { toast } from "@get-cart/ui/lib/sonner";
 import { useEffect } from "react";
 import ProductInputField from "./product-input-field";
 import ProductImages from "./product-images";

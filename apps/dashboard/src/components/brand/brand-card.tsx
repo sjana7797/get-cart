@@ -1,5 +1,5 @@
 import { Brand } from "database";
-import { Card, CardContent, CardFooter } from "@repo/ui/components/ui/card";
+import { Card, CardContent, CardFooter } from "@get-cart/ui/components/ui/card";
 
 type Props = { brand: Brand };
 

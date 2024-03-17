@@ -1,5 +1,5 @@
-import { zodResolver } from "@repo/ui/lib/resolvers-zod";
-import { Button } from "@repo/ui/components/ui/button";
+import { zodResolver } from "@get-cart/ui/lib/resolvers-zod";
+import { Button } from "@get-cart/ui/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,7 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@repo/ui/components/ui/dialog";
+} from "@get-cart/ui/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -17,8 +17,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@repo/ui/components/ui/form";
-import { Input } from "@repo/ui/components/ui/input";
+} from "@get-cart/ui/components/ui/form";
+import { Input } from "@get-cart/ui/components/ui/input";
 import { ModalProps } from "common/types";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";

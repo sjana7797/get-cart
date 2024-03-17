@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerScroll } from "@repo/ui/components/ui/container-scroll-animation";
+import { ContainerScroll } from "@get-cart/ui/components/ui/container-scroll-animation";
 import { trpc } from "~/utils/trpc";
 
 type Props = {};

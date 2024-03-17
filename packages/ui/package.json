@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@get-cart/ui",
   "version": "0.0.0",
   "private": true,
   "main": "./index.ts",
@@ -25,8 +25,8 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@remixicon/react": "^4.2.0",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@get-cart/eslint-config": "workspace:*",
+    "@get-cart/typescript-config": "workspace:*",
     "@tremor/react": "^3.14.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",

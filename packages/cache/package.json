@@ -13,6 +13,6 @@
   },
   "devDependencies": {
     "typescript": "^5.4.2",
-    "@repo/typescript-config": "workspace:*"
+    "@get-cart/typescript-config": "workspace:*"
   }
 }

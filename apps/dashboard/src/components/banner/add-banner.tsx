@@ -1,4 +1,4 @@
-import { zodResolver } from "@repo/ui/lib/resolvers-zod";
+import { zodResolver } from "@get-cart/ui/lib/resolvers-zod";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Banner, bannerSchema } from "~/zod-schema/banner";
@@ -11,8 +11,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@repo/ui/components/ui/dialog";
-import { Button } from "@repo/ui/components/ui/button";
+} from "@get-cart/ui/components/ui/dialog";
+import { Button } from "@get-cart/ui/components/ui/button";
 import {
   Form,
   FormControl,
@@ -21,8 +21,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@repo/ui/components/ui/form";
-import { Input } from "@repo/ui/components/ui/input";
+} from "@get-cart/ui/components/ui/form";
+import { Input } from "@get-cart/ui/components/ui/input";
 import { useCreateBannerMutation } from "~/api";
 
 type Props = {

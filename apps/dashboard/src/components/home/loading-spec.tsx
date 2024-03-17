@@ -1,5 +1,5 @@
-import { Skeleton } from "@repo/ui/components/ui/skeleton";
-import { Card } from "@repo/ui/components/tremor";
+import { Skeleton } from "@get-cart/ui/components/ui/skeleton";
+import { Card } from "@get-cart/ui/components/tremor";
 
 function LoadingSpec() {
   return (
