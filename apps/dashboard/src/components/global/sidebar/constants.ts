@@ -1,11 +1,11 @@
-import type { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "common/lucide";
 import {
   LayoutDashboard,
   ShoppingCart,
   PackagePlus,
   GalleryHorizontalEnd,
   CreativeCommons,
-} from "lucide-react";
+} from "common/lucide";
 
 export type Nav = {
   title: string;

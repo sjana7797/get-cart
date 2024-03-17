@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "common/zod";
 
 const productSchema = z.object({
   name: z.string(),

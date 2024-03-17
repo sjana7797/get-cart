@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@repo/ui/components/ui/select";
-import { categories } from "common";
+import { categories } from "common/index";
 import { ProductAddForm } from "./type";
 
 interface ProductCategoryProps extends SelectHTMLAttributes<HTMLSelectElement> {

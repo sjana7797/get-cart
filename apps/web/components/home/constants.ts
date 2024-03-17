@@ -1,5 +1,5 @@
 import type { Category } from "database";
-import type { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "common/lucide";
 import {
   Camera,
   Headphones,
@@ -8,7 +8,7 @@ import {
   Smartphone,
   Tablet,
   Watch,
-} from "lucide-react";
+} from "common/lucide";
 
 type CategoryIcon = {
   [key in Category]: LucideIcon;

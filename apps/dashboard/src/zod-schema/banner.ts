@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "common/zod";
 
 export const bannerSchema = z.object({
   image: z.string().url().min(1, {

@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch } from "common/react-redux";
 import { setProgress } from "~/lib/store/features/topLoadingBarSlice";
 
 function useTopLoadingBar() {

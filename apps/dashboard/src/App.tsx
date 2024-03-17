@@ -6,7 +6,7 @@ import Products from "./routes/products";
 import Root from "./routes/root";
 import LoadingBar from "react-top-loading-bar";
 import { useAppSelector } from "./lib/store/hooks";
-import { useDispatch } from "react-redux";
+import { useDispatch } from "common/react-redux";
 import { setProgress } from "~/lib/store/features/topLoadingBarSlice";
 import AddProduct from "./routes/add-product";
 import Banner from "./routes/banner";

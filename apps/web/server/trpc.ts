@@ -2,7 +2,7 @@ import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import type { Context } from "./context";
 import { Prisma } from "database";
-import { ZodError } from "zod";
+import { ZodError } from "common/zod";
 
 const t = initTRPC.context<Context>().create({
   transformer: superjson,

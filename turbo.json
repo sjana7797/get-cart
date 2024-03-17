@@ -38,14 +38,20 @@
     "sp:start": {
       "cache": false
     },
-    "api#generate": {
-      "cache": false
-    },
     "api#build": {
-      "dependsOn": ["api#generate", "cache#build", "^db:generate"],
+      "dependsOn": ["cache#build", "^db:generate", "common#build"],
       "outputs": ["dist/**"]
     },
     "cache#build": {
+      "cache": false
+    },
+    "web#build": {
+      "dependsOn": ["common#build"]
+    },
+    "dashboard#build": {
+      "dependsOn": ["common#build"]
+    },
+    "common#build": {
       "cache": false
     }
   }
