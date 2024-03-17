@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Transition, Dialog } from "@headlessui/react";
-import { X } from "lucide-react";
+import { X } from "common/lucide";
 import { useAppDispatch, useAppSelector } from "~/lib/store/hooks";
 import { toggleCartSidebar } from "~/lib/store/features/cartSlice";
 import { Button } from "@ui/components/ui/button";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { UserRound, Search, ShoppingCart } from "lucide-react";
+import { UserRound, Search, ShoppingCart } from "common/lucide";
 import { Button } from "@repo/ui/components/ui/button";
 import { Input } from "@repo/ui/components/ui/input";
 import CartSidebar from "./cart-sidebar";
