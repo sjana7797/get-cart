@@ -6,6 +6,12 @@ import { BannerModule } from './banner/banner.module';
 import { BrandModule } from './brand/brand.module';
 
 @Module({
-  imports: [ProductModule, UserModule, AnalyticModule, BannerModule, BrandModule],
+  imports: [
+    ProductModule,
+    UserModule,
+    AnalyticModule,
+    BannerModule,
+    BrandModule,
+  ],
 })
 export class AppModule {}

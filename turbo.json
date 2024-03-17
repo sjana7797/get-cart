@@ -42,8 +42,11 @@
       "cache": false
     },
     "api#build": {
-      "dependsOn": ["api#generate"],
+      "dependsOn": ["api#generate", "cache#build"],
       "outputs": ["dist/**"]
+    },
+    "cache#build": {
+      "cache": false
     }
   }
 }
