@@ -138,9 +138,6 @@ importers:
       '@heroicons/react':
         specifier: ^2.1.1
         version: 2.1.1(react@18.2.0)
-      '@reduxjs/toolkit':
-        specifier: ^2.2.1
-        version: 2.2.1(react-redux@9.1.0)(react@18.2.0)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -171,21 +168,12 @@ importers:
       react-hook-form:
         specifier: ^7.51.0
         version: 7.51.0(react@18.2.0)
-      react-redux:
-        specifier: ^9.1.0
-        version: 9.1.0(@types/react@18.2.61)(react@18.2.0)(redux@5.0.1)
       react-router-dom:
         specifier: ^6.22.2
         version: 6.22.2(react-dom@18.2.0)(react@18.2.0)
       react-top-loading-bar:
         specifier: ^2.3.1
         version: 2.3.1(react@18.2.0)
-      redux:
-        specifier: ^5.0.1
-        version: 5.0.1
-      redux-thunk:
-        specifier: ^3.1.0
-        version: 3.1.0(redux@5.0.1)
       sort-by:
         specifier: ^1.2.0
         version: 1.2.0
@@ -232,9 +220,6 @@ importers:
       '@headlessui/react':
         specifier: ^1.7.18
         version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
-      '@reduxjs/toolkit':
-        specifier: ^2.2.1
-        version: 2.2.1(react-redux@9.1.0)(react@18.2.0)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -271,15 +256,6 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
-      react-redux:
-        specifier: ^9.1.0
-        version: 9.1.0(@types/react@18.2.46)(react@18.2.0)(redux@5.0.1)
-      redux:
-        specifier: ^5.0.1
-        version: 5.0.1
-      redux-thunk:
-        specifier: ^3.1.0
-        version: 3.1.0(redux@5.0.1)
       sharp:
         specifier: ^0.33.1
         version: 0.33.2
@@ -333,12 +309,24 @@ importers:
 
   packages/common:
     dependencies:
+      '@reduxjs/toolkit':
+        specifier: ^2.2.1
+        version: 2.2.1(react-redux@9.1.0)(react@18.2.0)
       lucide-react:
         specifier: ^0.344.0
         version: 0.344.0(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      react-redux:
+        specifier: ^9.1.0
+        version: 9.1.0(@types/react@18.2.61)(react@18.2.0)(redux@5.0.1)
+      redux:
+        specifier: ^5.0.1
+        version: 5.0.1
+      redux-thunk:
+        specifier: ^3.1.0
+        version: 3.1.0(redux@5.0.1)
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -3757,6 +3745,7 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
+    dev: true
 
   /@types/react@18.2.61:
     resolution: {integrity: sha512-NURTN0qNnJa7O/k4XUkEW2yfygA+NxS0V5h1+kp9jPwhzZy95q3ADoGMP0+JypMhrZBTTgjKAUlTctde1zzeQA==}
@@ -9202,28 +9191,6 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
-
-  /react-redux@9.1.0(@types/react@18.2.46)(react@18.2.0)(redux@5.0.1):
-    resolution: {integrity: sha512-6qoDzIO+gbrza8h3hjMA9aq4nwVFCKFtY2iLxCtVT38Swyy2C/dJCGBXHeHLtx6qlg/8qzc2MrhOeduf5K32wQ==}
-    peerDependencies:
-      '@types/react': ^18.2.25
-      react: ^18.0
-      react-native: '>=0.69'
-      redux: ^5.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react-native:
-        optional: true
-      redux:
-        optional: true
-    dependencies:
-      '@types/react': 18.2.46
-      '@types/use-sync-external-store': 0.0.3
-      react: 18.2.0
-      redux: 5.0.1
-      use-sync-external-store: 1.2.0(react@18.2.0)
-    dev: false
 
   /react-redux@9.1.0(@types/react@18.2.61)(react@18.2.0)(redux@5.0.1):
     resolution: {integrity: sha512-6qoDzIO+gbrza8h3hjMA9aq4nwVFCKFtY2iLxCtVT38Swyy2C/dJCGBXHeHLtx6qlg/8qzc2MrhOeduf5K32wQ==}
